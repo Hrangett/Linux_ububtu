@@ -1,1 +1,1 @@
-# Linux_ububtu
+# Linux_ubuntu
