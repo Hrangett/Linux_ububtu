@@ -27,3 +27,11 @@
     - sigaction
   - PIPE 기반 프로세스 통신
   
+## Day 6
+  - 멀티 플렉스 
+    - select 함수 
+  - 다양한 입출력 합수들
+    - send / recv :: 긴급 메세지 전송(MSG_OOB)
+    - readv / writev
+  - 브로드/멀티 캐스트 특징
+  - 시스템 입출력/표준 입출력 특징
