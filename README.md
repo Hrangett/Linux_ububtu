@@ -35,3 +35,13 @@
     - readv / writev
   - 브로드/멀티 캐스트 특징
   - 시스템 입출력/표준 입출력 특징
+  
+## Day 7
+  - 표준 입출력함수
+    - fdopen함수를 이용한 FILE 구조체 포인터 변환
+    - fdopen함수를 이용한 파일 디스크립터로의 변화
+    - socket 기반 표준 입출력 사용
+  - 입출력 스트림 분리
+    - 파일 디스크립터의 복사와 Half-close 
+  - epoll
+  - Level trigger / Edge trigger
