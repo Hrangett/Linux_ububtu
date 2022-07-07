@@ -45,3 +45,11 @@
     - 파일 디스크립터의 복사와 Half-close 
   - epoll
   - Level trigger / Edge trigger
+  
+## Day 8
+  - Socket 기반 멀티 쓰레드
+  
+## Day 9
+  - LINUX 기반 HTTP를 활용한 소켓 네트워크 통신
+  ![SocektNetwork](https://github.com/Hrangett/Linux_ububtu/blob/main/Socket/%EC%9D%B4%EC%9D%80%EC%98%81.jpg?raw=true)
+  
