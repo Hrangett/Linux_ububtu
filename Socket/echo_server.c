@@ -12,7 +12,8 @@ int main(int argc, char *argv[])
 {
 	int serv_sock, clnt_sock;
 
-	char message[BUF_SIZE];
+	char message[BUF_SIZE] = "hello";
+	char buf[BUF_SIZE];
 	int str_len, i;
 	struct sockaddr_in serv_adr, clnt_adr;
 	socklen_t clnt_adr_sz;
@@ -29,12 +30,14 @@ int main(int argc, char *argv[])
 
 	memset(&serv_adr, 0, sizeof(serv_adr));
 	serv_adr.sin_family=AF_INET;
-	serv_adr.sin_addr.s_addr=htons(INADDR_ANY);
+	serv_adr.sin_addr.s_addr=htonl(INADDR_ANY);
 	serv_adr.sin_port = htons(atoi(argv[1]));
 
 	if(bind(serv_sock,(struct sockaddr*)&serv_adr,sizeof(serv_adr)) == 1)
+		error_handling("bind() error");
+	if(listen(serv_sock,5) == -1)
 		error_handling("listen() error");
-
+		
 	clnt_adr_sz = sizeof(clnt_adr);
 
 	for(i = 0;i<5;i++)
@@ -43,11 +46,14 @@ int main(int argc, char *argv[])
 		if(clnt_sock == -1)
 			error_handling("accept()error");
 		else
-			printf("Connectioned client %d \n",i+1);
+			printf("Connectioned client %d \n\n",i+1);
 
-		while((str_len = read(clnt_sock, message, BUF_SIZE))!=0)
-			write(clnt_sock,message,str_len);
+		read(clnt_sock, buf, sizeof(buf));
+		printf(" clnt_sock : %s \n ", buf);
 
+		//while((str_len = read(clnt_sock, message, BUF_SIZE))!=0)
+		write(clnt_sock, message, sizeof(message));
+		
 		close(clnt_sock);
 	}
 	close(serv_sock);
