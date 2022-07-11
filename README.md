@@ -3,18 +3,27 @@
 ## Day 1
   - Linux
   - VMWARER
-  - Ubuntu
+  - Ubuntu 설치
 ## Day 2
   - Network progreaming
   - Socket 통신
     - linux 환경
-    - Linux - window 통신
+    - window 환경
 ## Day 3
+  - TCP, UDP 통신 프로세서 이해
+  - TCP, UDP 기반 server, client 구현
+
 ## Day 4
-  - TCP
-  - UDP
-  
+  - Half-close
+  - DNS server
+    - 도메인 사용이유
+    - 도메인으로 ip 주소 얻기
+  - socket 입출력 버퍼
+  - Tiem-wati
+  - Nagle 알고리즘
+
 ## Day 5
+  - 멀티 프로세서
   - fork 사용
     - fork 를 이용한 다중접속 server 구현(TCP)
     - fork 를 이용한 입출력 루틴 분할
